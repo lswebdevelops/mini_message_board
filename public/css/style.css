@@ -1,45 +1,43 @@
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@300;400;500;700&family=VT323&family=Vina+Sans&display=swap');
+
 :root {
   --black: #1c1c1c;
   --gray: #7e7e7e;
   --gray-light: #e4e4e4;
   --red: #b30000;
-  --font-size-base: 1rem;
+  --font-size-base: 1.5rem;
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
   --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --border-radius: 10px;
   --box-shadow: 2px 2px 2px 2px rgb(179, 179, 179);
-  --upper-box-shadow: 2px 2px 2px 4px rgb(200, 200, 200);
+  --upper-box-shadow: 2px 2px 2px 4px rgb(84, 84, 84);
   --main-background: #faf5ee;
-  --background-rgb: 15 15 15;
-    
+  --background-rgb: rgb(94, 169, 145);  
+  --font-family: 'VT323', monospace; 
   --blue-rgb: 33 150 243;
   --primary-rgb: var(--blue-rgb);
-  
- }
+}
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-family);
+  font-weight: 700;
   color: var(--black);
-  font-size: var(--font-size-base);
-  /* background-color: var(--main-background); */
- 
+  font-size: var(--font-size-base);  
   margin: 0;
   margin-bottom: 75px;
   text-align: center;
 }
 
 body {
-  width: 950px;  
-  background-color: rgb(33, 48, 66, 0.15);
+  width: 950px;
+ background-color: var(--background-rgb); 
 }
 
-
-
 .main {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
   width: 720px;
   height: 370px;
   background-repeat: no-repeat;
@@ -56,17 +54,16 @@ body {
   height: 350px;
   border-radius: 10px;
   border: 2px solid rgb(228, 222, 198);
-  background: linear-gradient(    
+  background: linear-gradient(
     rgb(var(--primary-rgb) / 0.15),
     rgb(var(--primary-rgb) / 0.15) 3px,
     transparent 3px,
     transparent 9px
   );
   background-size: 100% 9px;
- 
+
   animation: pan-overlay 22s infinite linear;
   position: absolute;
- 
 }
 .para-about {
   padding: 20px 20px 10px 10px;
@@ -80,7 +77,6 @@ body {
     background-position: 0% -100%;
   }
 }
-
 
 a {
   color: var(--black);
@@ -101,7 +97,7 @@ input[type="password"],
 input[type="search"],
 select,
 textarea {
-  font-family: sans-serif;
+
   font-size: 1rem;
   display: block;
   box-sizing: border-box;
@@ -137,8 +133,6 @@ img {
   padding: 0 10px;
 }
 
-
-
 /* Hero Section */
 .hero-image {
   max-height: 528px;
@@ -159,12 +153,11 @@ img {
   padding-top: 10px;
 }
 
-@media only screen and (min-width: 768px) {
   .header {
     grid-template-columns: auto 1fr auto;
     grid-template-areas: "logo menu button";
   }
-}
+
 
 .header__logo {
   font-weight: 800;
@@ -182,14 +175,19 @@ img {
   display: flex;
   grid-area: menu;
 }
-.header__logo__admin , .header__logo_poems {
+.header__logo__admin,
+.header__logo_poems {
   font-weight: 800;
   font-size: 25px;
   text-decoration: none;
   grid-area: logo;
 }
 
-.header__logo, .header__nav, .header__button ,.header__logo__admin , .header__logo_poems  {
+.header__logo,
+.header__nav,
+.header__button,
+.header__logo__admin,
+.header__logo_poems {
   width: 100%;
 }
 
@@ -286,7 +284,7 @@ img {
   margin: 18px 0;
 }
 
-@media only screen and (min-width: 768px) {
+
   .article-ul li a {
     flex-direction: row;
     align-items: center;
@@ -295,7 +293,7 @@ img {
   .article-list__date {
     text-align: right;
   }
-}
+
 
 .article-ul li {
   font-size: 24px;
@@ -323,11 +321,11 @@ img {
 .article {
   white-space: pre-line;
   font-size: 1.2rem;
-  font-family: poets electra, Georgia, times new roman, serif;
+ 
 }
 .post-h1 {
   font-size: 1.7rem;
-  font-family: poets electra, Georgia, times new roman, serif;
+
 }
 
 /* Footer */
@@ -336,8 +334,8 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--main-background);
-  padding: 1rem; 
+  background-color: var(--background-rgb);
+  padding: 1rem;
   text-align: center;
   box-shadow: var(--upper-box-shadow);
 }
@@ -366,7 +364,7 @@ img {
   text-decoration: none;
   font-size: 0.8rem;
   padding: 4px 8px;
-  font-family: poets electra, Georgia, times new roman, serif;
+ 
   line-height: 2;
 }
 .admin-posts a {
@@ -397,11 +395,9 @@ img {
   right: 0;
 }
 
-
 .header_button {
   display: flex;
   justify-content: right;
-
 }
 
 .searchBar.open {
@@ -435,28 +431,102 @@ img {
 }
 .x-close-icon {
   background-color: white;
-   width: 2rem;
-   border-radius: 50%;
-  
+  width: 2rem;
+  border-radius: 50%;
 }
 .btn-logout {
   background-color: var(--main-background);
   border: none;
   padding: 0;
   margin: 0;
-
 }
-.btn-img-logout{
+.btn-img-logout {
   background-color: white;
   border-radius: 20%;
-height: 30px;
-
+  height: 30px;
 }
-.btn-img-logout:hover{
-   scale: 1.1;
-   cursor: pointer;
-   border: grey solid 1px;
+.btn-img-logout:hover {
+  scale: 1.1;
+  cursor: pointer;
+  border: grey solid 1px;
 }
 .searchBtn:hover {
   cursor: pointer;
+}
+.searchBtn {
+  font-family: var(--font-family);
+  background-color: var(--background-rgb);
+  font-size: 1.2rem;
+}
+.user-message-button-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 528px;
+  bottom: 0;
+  padding: 5px;
+}
+.user-message-container {
+  flex-direction: column;
+}
+
+.user-message-container input {
+  width: 415px;
+  padding: 2px;
+  background-color: rgba(var(--background-rgb), 0.8);
+
+  border: none;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #f8f8f8;
+}
+input::placeholder {
+  color: #f8f8f8; /* Set the desired color */
+}
+input:hover, .btn-send:hover {
+  background-color: #1c1c1c;
+}
+.user-message-button-container * {
+  margin: 0;
+  padding: 0;
+ 
+
+}
+
+.btn-send {
+  width: 85px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  background-color: rgba(var(--background-rgb), 0.8);
+  color: #f8f8f8;
+}
+.user-message-container-btn {
+  display: flex;
+  align-items: center;
+}
+.messages-container {
+  height: 260px;
+   overflow: scroll;
+}
+/* Customize the scrollbar */
+.messages-container::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: rgb(67, 104, 67) ;
+  
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background-color: var(--background-rgb);
+}
+
+.container-messages-general h3{
+  padding: 0;
+  margin: 0;
+ height: 25px;
 }
