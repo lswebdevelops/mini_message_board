@@ -582,7 +582,7 @@ input:hover,
   padding-bottom: 16px;
   
 }
-.meessage_link {
+.message_link {
   text-decoration: none;
 
 }
@@ -591,31 +591,27 @@ list-style: none;
 }
 
 .next_prev_messages_container {
-  
+  display: flex;
+  justify-content: space-between;
   width: 500px;
   height: 30px;
- 
-  margin-bottom: 0;
-  ;
 
+  margin-bottom: 0;
 }
 
 .next_message, .prev_message{
-  margin: 0;;
-  padding: 0;;
-  
+  margin: 0;
+  padding: 0;
 
 }
 .next_message{
- position: relative;
+ position: relative; 
  
- right: 75px;
  
 }
 .prev_message{
   position: relative;
- 
-  left: 75px;
+
 
 }
 .message_h1 {
@@ -626,4 +622,92 @@ list-style: none;
   position: relative;
   top:120px;
   font-size: 1.2rem;
+}
+
+
+
+.short_link_new_old_messages {
+  display: none;
+}
+.long_link_new_old_messages {
+  display: block;
+}
+
+.button-search-span, .header__logo_poems {
+  display: block;
+}
+
+/* Media query for small screens */
+
+/* 
+ */
+ /* 
+  */
+
+@media only screen and (max-width: 768px) {
+ .main {
+  background-image: url("/img/monitor_cellphone.png");
+  width: 415px;
+ }
+.main-overlay {
+  width:240px;
+}
+.container-messages-general {
+  width:240px;
+ 
+
+}
+.messages-container{
+  height: 230px;
+}
+.user-message-container {
+  width:240px; 
+  
+}
+
+.user-message-container input {
+  width:230px; 
+  
+}
+.messages-container-inner {
+
+width:95%;
+}
+.user-message-button-container {
+
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.next_prev_messages_container {
+  width:210px;
+  margin-bottom: 25px;
+}
+.user-message-container {
+  width:220px;
+
+}
+
+.short_link_new_old_messages {
+  display: block;
+}
+.long_link_new_old_messages {
+  display: none;
+}
+.user-message-container-btn {
+  width:220px;
+  display: flex;
+  justify-content: center;
+}
+body {
+  width:98%;
+};
+
+
+.button-search-span, .header__logo_poems {
+  display: none;
+}
+
 }

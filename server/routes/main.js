@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
     };
     // const data = await Message.find();
 
-    let perPage = 6;
+    let perPage = 4;
     let page = req.query.page || 1;
 
     const data = await Message.aggregate([{ $sort: { createdAt: -1 } }])
