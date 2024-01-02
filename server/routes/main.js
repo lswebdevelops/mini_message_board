@@ -108,6 +108,37 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+/**
+ * post/
+ * add new messages
+ */
+
+
+router.post('/add-message', async (req, res) => {
+  try {
+    const  { username, message } = req.body;
+
+    // create a new message 
+    const newMessage = new Message( {
+      username, 
+      message,
+    });
+
+    // save the message to db 
+    await newMessage.save();
+
+    // redirect to the home page 
+    res.redirect('/');
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+
+
 // inserting data
 
 // function insertMessageData() {

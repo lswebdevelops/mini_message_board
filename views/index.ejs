@@ -40,17 +40,20 @@
 
 
     </div>
-    <div class="user-message-button-container">
+ 
+       <form  class="user-message-button-container" action="/add-message" method="POST">
         <div class="user-message-container">
             <div>
-                <input type="text" maxlength="20" minlength="5"placeholder="Username..." />
+                <input type="text" maxlength="20" minlength="2"placeholder="Username..." required name="username" />
             </div>
             <div>
-                <input type="text"maxlength="100" minlength="5" placeholder="Message..." />
+                <input type="text"maxlength="100" minlength="5" placeholder="Message..." required name="message" />
             </div>
         </div>
         <div class="user-message-container-btn">
-            <button class="btn-send">Send</button>
+            <button type="submit" class="btn-send">Send</button>
         </div>
-    </div>
+
+       </form>
+    
 </div>
