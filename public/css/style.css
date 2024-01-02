@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@300;400;500;700&family=VT323&family=Vina+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@300;400;500;700&family=VT323&family=Vina+Sans&display=swap");
 
 :root {
   --black: #1c1c1c;
@@ -14,8 +13,8 @@
   --box-shadow: 2px 2px 2px 2px rgb(179, 179, 179);
   --upper-box-shadow: 2px 2px 2px 4px rgb(84, 84, 84);
   --main-background: #faf5ee;
-  --background-rgb: rgb(94, 169, 145);  
-  --font-family: 'VT323', monospace; 
+  --background-rgb: rgb(94, 169, 145);
+  --font-family: "VT323", monospace;
   --blue-rgb: 33 150 243;
   --primary-rgb: var(--blue-rgb);
 }
@@ -24,7 +23,7 @@ body {
   font-family: var(--font-family);
   font-weight: 700;
   color: var(--black);
-  font-size: var(--font-size-base);  
+  font-size: var(--font-size-base);
   margin: 0;
   margin-bottom: 75px;
   text-align: center;
@@ -32,7 +31,7 @@ body {
 
 body {
   width: 950px;
- background-color: var(--background-rgb); 
+  background-color: var(--background-rgb);
 }
 
 .main {
@@ -65,8 +64,14 @@ body {
   animation: pan-overlay 22s infinite linear;
   position: absolute;
 }
+hr{
+border: 1px solid beige;
+}
 .para-about {
   padding: 20px 20px 10px 10px;
+  overflow: scroll;
+  margin-top: -12px;
+  height: 300px;
 }
 /* Corrected the keyframes name */
 @keyframes pan-overlay {
@@ -97,7 +102,6 @@ input[type="password"],
 input[type="search"],
 select,
 textarea {
-
   font-size: 1rem;
   display: block;
   box-sizing: border-box;
@@ -153,11 +157,10 @@ img {
   padding-top: 10px;
 }
 
-  .header {
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas: "logo menu button";
-  }
-
+.header {
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo menu button";
+}
 
 .header__logo {
   font-weight: 800;
@@ -284,16 +287,14 @@ img {
   margin: 18px 0;
 }
 
+.article-ul li a {
+  flex-direction: row;
+  align-items: center;
+}
 
-  .article-ul li a {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .article-list__date {
-    text-align: right;
-  }
-
+.article-list__date {
+  text-align: right;
+}
 
 .article-ul li {
   font-size: 24px;
@@ -321,11 +322,9 @@ img {
 .article {
   white-space: pre-line;
   font-size: 1.2rem;
- 
 }
 .post-h1 {
   font-size: 1.7rem;
-
 }
 
 /* Footer */
@@ -364,7 +363,7 @@ img {
   text-decoration: none;
   font-size: 0.8rem;
   padding: 4px 8px;
- 
+
   line-height: 2;
 }
 .admin-posts a {
@@ -394,7 +393,10 @@ img {
   left: 0;
   right: 0;
 }
-
+#searchInput {
+  background-color: #1c1c1c;
+  color: white;
+}
 .header_button {
   display: flex;
   justify-content: right;
@@ -457,6 +459,7 @@ img {
   font-family: var(--font-family);
   background-color: var(--background-rgb);
   font-size: 1.2rem;
+  border-radius: 4px;
 }
 .user-message-button-container {
   display: flex;
@@ -472,25 +475,26 @@ img {
 
 .user-message-container input {
   width: 415px;
-  padding: 2px;
+  padding: 2px 0 0 0 ;
+  margin: 0;
   background-color: rgba(var(--background-rgb), 0.8);
 
   border: none;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 1.2rem;
   color: #f8f8f8;
 }
 input::placeholder {
   color: #f8f8f8; /* Set the desired color */
 }
-input:hover, .btn-send:hover {
-  background-color: #1c1c1c;
+input:hover,
+.btn-send:hover {
+  background-color: rgb(67, 104, 67);
+  border-radius: 5px;
 }
 .user-message-button-container * {
   margin: 0;
   padding: 0;
- 
-
 }
 
 .btn-send {
@@ -498,7 +502,7 @@ input:hover, .btn-send:hover {
   height: 30px;
   border-radius: 4px;
   border: none;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 1.2rem;
   background-color: rgba(var(--background-rgb), 0.8);
   color: #f8f8f8;
@@ -509,24 +513,79 @@ input:hover, .btn-send:hover {
 }
 .messages-container {
   height: 260px;
-   overflow: scroll;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  margin-left: 14px;
+  align-items: self-start;
+  overflow: scroll;
 }
 /* Customize the scrollbar */
 .messages-container::-webkit-scrollbar {
   width: 12px; /* Set the width of the scrollbar */
 }
+.para-about::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
 
 .messages-container::-webkit-scrollbar-thumb {
-  background-color: rgb(67, 104, 67) ;
-  
+  background-color: rgb(67, 104, 67);
+}
+.para-about::-webkit-scrollbar-thumb {
+  background-color: rgb(67, 104, 67);
 }
 
 .messages-container::-webkit-scrollbar-track {
   background-color: var(--background-rgb);
 }
+.para-about::-webkit-scrollbar-track {
+  background-color: var(--background-rgb);
+}
 
-.container-messages-general h3{
+.messages-container-inner {
+  display: flex;
+  width: 495px;
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: center;
+ 
+  margin-bottom: 12px;
+}
+
+.container-messages-general h3 {
+  padding: 4px;
+  margin: 4px;
+  height: 25px;
+}
+
+.username-para {
+  font-size: 1.2rem;
   padding: 0;
   margin: 0;
- height: 25px;
+  font-weight: 700;
+  color: #080808;
+}
+.message-para {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  color: #080808;
+}
+.date-para {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  color: #080808;
+  border-bottom: rgb(118, 155, 118) solid 1px;
+  padding-bottom: 16px;
+  
+}
+.meessage_link {
+  text-decoration: none;
+
+}
+li {
+list-style: none;
 }

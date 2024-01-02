@@ -1,33 +1,30 @@
 <div class="container-messages-general">
-
     <h3>Recent Messages</h3>
     <div class="messages-container">
-        <p>message one</p>
-        <p>message two</p>
-        <p>message three</p>
-        <p>message one</p>
-        <p>message two</p>
-        <p>message three</p>
-        <p>message one</p>
-        <p>message two</p>
-        <p>message three</p>
-        <p>message one</p>
-        <p>message two</p>
-        <p>message three</p>
-    </div>
- 
+ <% data.forEach(message => { %>  
+     <div class="messages-container-inner">
+        <li>
+
+            <a class="meessage_link" href="/message/<%= message._id %>">
+                <p class="username-para"> <%= message.username.toUpperCase() %></p>
+                <p class="message-para"> <%= message.message %></p>
+                <p class="date-para"> <%= message.createdAt.toDateString() %></p>        
+            </a>
+        </li>
+        </div>
+        <% }) %>      
+    </div>    
     <div class="user-message-button-container">
         <div class="user-message-container">
             <div>
-                <input placeholder="Username..." />
+                <input type="text" max="100" min="5" placeholder="Username..." />
             </div>
             <div>
-                <input placeholder="Message..." />
+                <input type="text" max="100" min="5" placeholder="Message..." />
             </div>
         </div>
         <div class="user-message-container-btn">
         <button class="btn-send">Send</button>
-
        </div>
     </div>
 </div>
