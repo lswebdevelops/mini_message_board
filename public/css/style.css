@@ -608,13 +608,22 @@ list-style: none;
 }
 .next_message{
  position: relative;
- top: 30px;
+ 
  right: 75px;
  
 }
 .prev_message{
   position: relative;
-  top: 30px;
+ 
   left: 75px;
 
+}
+.message_h1 {
+  font-size: 1.6rem;
+}
+.back_to_message {
+  text-decoration: none;
+  position: relative;
+  top:120px;
+  font-size: 1.2rem;
 }

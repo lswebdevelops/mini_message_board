@@ -15,6 +15,9 @@ app.set("view engine", "ejs");
 // connect db 
 connectDB();
 
+app.use(express.urlencoded({ extended: true}))
+app.use(express.json())
+
 // setting public folder
 
 app.use(express.static("public"));
