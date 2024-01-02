@@ -589,3 +589,32 @@ input:hover,
 li {
 list-style: none;
 }
+
+.next_prev_messages_container {
+  
+  width: 500px;
+  height: 30px;
+ 
+  margin-bottom: 0;
+  ;
+
+}
+
+.next_message, .prev_message{
+  margin: 0;;
+  padding: 0;;
+  
+
+}
+.next_message{
+ position: relative;
+ top: 30px;
+ right: 75px;
+ 
+}
+.prev_message{
+  position: relative;
+  top: 30px;
+  left: 75px;
+
+}

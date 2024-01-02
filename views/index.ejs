@@ -20,15 +20,24 @@
             </div>
             <% }) %>
 
-
+<div class="next_prev_messages_container">
+    
                 <!-- old messages' button -->
 
                 <% if (nextPage !==null) { %>
-                    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older Messages</a>
+                    <a href="/?page=<%= nextPage %>" class="pagination next_message">&lt; View older Messages</a>
 
                     <% } %>
 
-                <!-- old messages' button -->
+                        <!-- old messages' button -->
+                        <!-- Newest messages' button -->
+                        <% if (prevPage !==null) { %>
+                            <a href="/?page=<%= prevPage %>" class="pagination prev_message">View Newest Messages &gt;</a>
+                            <% } %>
+                       <!-- Newest messages' button -->
+
+</div>
+
 
     </div>
     <div class="user-message-button-container">

@@ -27,12 +27,14 @@ router.get("/", async (req, res) => {
     const count = await Message.countDocuments();
     const nextPage = parseInt(page) + 1;
     const hasNextPage = nextPage <= Math.ceil(count / perPage)
+    const hasPrevPage = page > 1; 
 
     res.render("index", { 
       locals, 
       data, 
       current: page, 
-      nextPage: hasNextPage ? nextPage : null
+      nextPage: hasNextPage ? nextPage : null,
+      prevPage: hasPrevPage ? page -1: null,
     
     });
   } catch (error) {
