@@ -422,7 +422,7 @@ img {
 
 .pagination {
   font-size: 1.3rem;
-  color: var(--gray);
+  color:  black;
   text-decoration: none;
   margin-top: 40px;
   display: inline-block;

@@ -8,13 +8,33 @@ const Message = require("../models/Message");
  */
 
 router.get("/", async (req, res) => {
-  const locals = {
-    title: "Mini Messageboard",
-    description: "Simple Messageboard created with NojeJs, Express & MongoDb.",
-  };
   try {
-    const data = await Message.find();
-    res.render("index", { locals, data });
+    const locals = {
+      title: "Mini Messageboard",
+      description:
+        "Simple Messageboard created with NojeJs, Express & MongoDb.",
+    };
+    // const data = await Message.find();
+
+    let perPage = 6;
+    let page = req.query.page || 1
+
+    const data = await Message.aggregate( [ { $sort: { createdAt: -1 }}])
+    .skip(perPage * page - perPage)
+    .limit(perPage)
+    .exec();
+
+    const count = await Message.countDocuments();
+    const nextPage = parseInt(page) + 1;
+    const hasNextPage = nextPage <= Math.ceil(count / perPage)
+
+    res.render("index", { 
+      locals, 
+      data, 
+      current: page, 
+      nextPage: hasNextPage ? nextPage : null
+    
+    });
   } catch (error) {
     console.log(error);
   }
@@ -36,36 +56,36 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-// inserting data 
+// inserting data
 
-function insertMessageData () {
-  Message.insertMany([
-    {
-      username: "third user ",
-      message: "just a message"
-    },
-    {
-      username: "4th user ",
-      message: "just a message"
-    },
-    {
-      username: "5th user ",
-      message: "just a message"
-    },
-    {
-      username: "6th user ",
-      message: "just a message"
-    },
-    {
-      username: "7th user ",
-      message: "just a message"
-    },
-    {
-      username: "8th user ",
-      message: "just a message"
-    },
-  ])
-}
+// function insertMessageData() {
+//   Message.insertMany([
+//     {
+//       username: "third user ",
+//       message: "just a message",
+//     },
+//     {
+//       username: "10th user ",
+//       message: "just a message",
+//     },
+//     {
+//       username: "11th user ",
+//       message: "just a message",
+//     },
+//     {
+//       username: "12th user ",
+//       message: "just a message",
+//     },
+//     {
+//       username: "13th user ",
+//       message: "just a message",
+//     },
+//     {
+//       username: "14th user ",
+//       message: "just a message",
+//     },
+//   ]);
+// }
 // uncomment to add data
 // insertMessageData()
 module.exports = router;
